@@ -1,10 +1,14 @@
-const CACHE = "cfc-correcteur-v1";
+const CACHE = "dbat-entraineur-v2";
 const FILES = [
   "./",
   "./index.html",
   "./exam.html",
   "./stats.html",
   "./manifest.json",
+  "./logo.svg",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./apple-touch-icon.png",
   "./data/materiaux-2018.json",
   "./data/materiaux-2019.json",
   "./data/materiaux-2021.json",

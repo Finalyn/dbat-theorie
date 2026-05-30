@@ -1,6 +1,6 @@
-# DBAT Théorie · Correcteur d'examens
+# DBAT Théorie · Entraîneur d'examens
 
-Correcteur interactif pour les examens **CFC Dessinateur · Orientation Architecture** du Canton de Vaud.
+Entraîneur interactif pour les examens **CFC Dessinateur · Orientation Architecture** du Canton de Vaud.
 
 Toutes les sessions précédentes (2018-2023) en Matériaux et Construction, avec corrections sourcées sur les cours **LM-A** (Lehrmittel Architecture).
 
