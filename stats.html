@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a5cf5">
+<link rel="manifest" href="manifest.json">
+<title>Statistiques · CFC Correcteur</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{
+    --text:#111;
+    --muted:#5a5a66;
+    --primary:#0a5cf5;
+    --primary-hover:#084ad6;
+    --success:#0a8a4f;
+    --danger:#c4302b;
+    --warn:#a76b00;
+    --border:rgba(0,0,0,.08);
+  }
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;padding:0;color:var(--text);
+    font-family:-apple-system,"SF Pro Display",BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;font-size:16px;
+    min-height:100vh;min-height:100dvh;overflow-x:hidden;letter-spacing:-.005em;
+  }
+  .bg{position:fixed;inset:0;z-index:-2;background:#f2f3f5}
+  body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+  .app{max-width:640px;margin:0 auto;padding:32px 20px 56px;position:relative;z-index:1}
+  .topline{font-size:13px;color:var(--muted);margin-bottom:24px}
+
+  .nav-top{
+    display:flex;gap:6px;margin-bottom:28px;padding:5px;
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(20px) saturate(180%);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);
+    border-radius:14px;
+    border:.5px solid rgba(255,255,255,.6);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 1px 2px rgba(0,0,0,.04);
+  }
+  .nav-top a{
+    flex:1;text-align:center;text-decoration:none;
+    padding:9px 12px;border-radius:10px;
+    font-size:13.5px;font-weight:500;color:var(--muted);transition:all .15s;
+  }
+  .nav-top a.active{background:var(--primary);color:#fff;box-shadow:0 1px 3px rgba(10,92,245,.3)}
+  .nav-top a:not(.active):hover{background:rgba(255,255,255,.6);color:var(--text)}
+
+  h2{font-size:13px;font-weight:600;margin:24px 0 10px;color:var(--muted);padding:0 4px;letter-spacing:.04em;text-transform:uppercase}
+
+  .glass{
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(24px) saturate(180%);
+    -webkit-backdrop-filter:blur(24px) saturate(180%);
+    border-radius:18px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.7),
+      inset 0 -1px 0 rgba(255,255,255,.15),
+      0 1px 2px rgba(0,0,0,.04),
+      0 8px 28px -10px rgba(0,0,0,.12);
+    border:.5px solid rgba(255,255,255,.6);
+    position:relative;
+  }
+  .glass::after{
+    content:"";position:absolute;left:5%;right:5%;top:0;height:50%;
+    border-radius:18px 18px 0 0;
+    background:linear-gradient(180deg, rgba(255,255,255,.3), transparent);
+    pointer-events:none;
+  }
+  .glass > *{position:relative;z-index:1}
+
+  /* Hero stats */
+  .hero{padding:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px}
+  .hero-item{text-align:center;padding:10px 4px;border-right:1px solid rgba(0,0,0,.08)}
+  .hero-item:last-child{border-right:none}
+  .hero-num{font-size:28px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--text)}
+  .hero-num.note{color:var(--primary)}
+  .hero-num.note.good{color:var(--success)}
+  .hero-num.note.mid{color:var(--warn)}
+  .hero-num.note.bad{color:var(--danger)}
+  .hero-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:4px;font-weight:500}
+
+  /* Action bar */
+  .actions{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+  .btn{
+    padding:10px 16px;border:.5px solid rgba(0,0,0,.12);border-radius:12px;
+    font-size:13.5px;font-weight:500;cursor:pointer;
+    font-family:inherit;text-decoration:none;color:var(--text);
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(12px) saturate(160%);
+    -webkit-backdrop-filter:blur(12px) saturate(160%);
+    transition:all .15s;display:inline-flex;align-items:center;gap:6px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 1px 2px rgba(0,0,0,.04);
+  }
+  .btn:hover{background:rgba(255,255,255,.85);border-color:rgba(0,0,0,.18)}
+  .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 2px 6px rgba(10,92,245,.25)}
+  .btn-primary:hover{background:var(--primary-hover);border-color:var(--primary-hover)}
+  .btn-danger{color:var(--danger)}
+  .btn-danger:hover{background:rgba(196,48,43,.08);border-color:rgba(196,48,43,.2)}
+
+  /* Exam stats list */
+  .exam-row{
+    padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:14px;
+    border-bottom:.5px solid rgba(0,0,0,.06);
+  }
+  .exam-row:last-child{border-bottom:none}
+  .exam-name{font-size:14.5px;font-weight:500;display:flex;align-items:center;gap:8px}
+  .exam-meta{font-size:12.5px;color:var(--muted);margin-top:3px}
+  .exam-right{text-align:right;font-size:13px;display:flex;align-items:center;gap:10px}
+  .mini-note{font-size:16px;font-weight:700;letter-spacing:-.02em;min-width:34px;text-align:right}
+  .mini-note.good{color:var(--success)}
+  .mini-note.mid{color:var(--warn)}
+  .mini-note.bad{color:var(--danger)}
+  .mini-note.empty{color:var(--muted);font-weight:500;font-size:13px}
+  .mini-bar{width:60px;height:5px;border-radius:3px;background:rgba(0,0,0,.08);overflow:hidden}
+  .mini-bar-fill{height:100%;background:var(--primary);transition:width .3s}
+  .mini-bar-fill.good{background:var(--success)}
+  .mini-bar-fill.bad{background:var(--danger)}
+  .exam-link{color:var(--muted);font-size:14px;text-decoration:none}
+  .exam-link:hover{color:var(--primary)}
+
+  /* Wrong questions list */
+  .wrong-section{padding:6px 14px 14px}
+  .wrong-item{
+    padding:12px 0;border-bottom:.5px solid rgba(0,0,0,.06);
+    display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+  }
+  .wrong-item:last-child{border-bottom:none}
+  .wrong-q{font-size:14px;color:var(--text);line-height:1.45;flex:1}
+  .wrong-q-meta{font-size:11.5px;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
+  .wrong-q strong{font-weight:600}
+  .wrong-link{
+    font-size:12px;padding:4px 10px;border-radius:8px;
+    background:rgba(10,92,245,.1);color:var(--primary);
+    text-decoration:none;font-weight:500;white-space:nowrap;
+  }
+  .wrong-link:hover{background:rgba(10,92,245,.18)}
+
+  /* Per-chapter analysis */
+  .ch-row{padding:12px 16px;border-bottom:.5px solid rgba(0,0,0,.06)}
+  .ch-row:last-child{border-bottom:none}
+  .ch-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+  .ch-name{font-size:13.5px;font-weight:500}
+  .ch-score{font-size:12.5px;color:var(--muted)}
+  .ch-bar{height:5px;border-radius:3px;background:rgba(0,0,0,.06);overflow:hidden}
+  .ch-bar-fill{height:100%;background:var(--primary);transition:width .3s}
+
+  .empty{padding:30px 20px;text-align:center;color:var(--muted);font-size:14px;line-height:1.5}
+  .empty strong{color:var(--text)}
+
+  footer{margin-top:32px;padding:16px 4px;font-size:12px;color:var(--muted);line-height:1.6;text-align:center}
+
+  @media (max-width:480px){
+    .app{padding:24px 14px 56px}
+    .hero{padding:16px;gap:6px}
+    .hero-num{font-size:22px}
+    .hero-lbl{font-size:10px}
+    .exam-row{padding:12px 14px;flex-wrap:wrap}
+    .exam-right{font-size:12.5px}
+    .actions{flex-direction:column}
+    .btn{justify-content:center}
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<div class="app">
+  <div class="topline">CFC Dessinateur · Orientation Architecture · Canton de Vaud</div>
+
+  <div class="nav-top">
+    <a href="index.html">Examens</a>
+    <a href="stats.html" class="active">Statistiques</a>
+  </div>
+
+  <div class="glass hero" id="hero">
+    <div class="hero-item"><div class="hero-num" id="heroQuestions">—</div><div class="hero-lbl">Questions répondues</div></div>
+    <div class="hero-item"><div class="hero-num" id="heroPct">—</div><div class="hero-lbl">% réussite</div></div>
+    <div class="hero-item"><div class="hero-num note" id="heroNote">—</div><div class="hero-lbl">Moyenne</div></div>
+  </div>
+
+  <div class="actions">
+    <a href="#" class="btn btn-primary" id="retryAll">↻ Refaire toutes les ratées</a>
+    <button class="btn btn-danger" id="resetAll">Tout effacer</button>
+  </div>
+
+  <h2>Examens</h2>
+  <div class="glass" id="examList"></div>
+
+  <h2>Questions ratées</h2>
+  <div class="glass" id="wrongList"></div>
+
+  <h2>Par chapitre</h2>
+  <div class="glass" id="chList"></div>
+
+  <footer>
+    Tes données restent stockées localement sur ton appareil.<br>
+    En vidant ton navigateur tu perdras ta progression.
+  </footer>
+</div>
+
+<script>
+const EXAMS = [
+  {id:"materiaux-mix",  title:"Matériaux — Mix",  subj:"Matériaux"},
+  {id:"materiaux-2023", title:"Matériaux 2023", subj:"Matériaux"},
+  {id:"materiaux-2022", title:"Matériaux 2022", subj:"Matériaux"},
+  {id:"materiaux-2021", title:"Matériaux 2021", subj:"Matériaux"},
+  {id:"materiaux-2019", title:"Matériaux 2019", subj:"Matériaux"},
+  {id:"materiaux-2018", title:"Matériaux 2018", subj:"Matériaux"},
+  {id:"construction-mix",  title:"Construction — Mix",  subj:"Construction"},
+  {id:"construction-2023", title:"Construction 2023", subj:"Construction"},
+  {id:"construction-2022", title:"Construction 2022", subj:"Construction"},
+  {id:"construction-2021", title:"Construction 2021", subj:"Construction"},
+  {id:"construction-2019", title:"Construction 2019", subj:"Construction"},
+  {id:"construction-2018", title:"Construction 2018", subj:"Construction"}
+];
+
+function getState(id){
+  try{return JSON.parse(localStorage.getItem("exam-"+id+"-v1"))||null}catch(e){return null}
+}
+function noteClass(n){return n>=4.5?"good":n>=4?"mid":"bad"}
+function escapeHtml(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
+function truncate(s,n){return s.length>n?s.slice(0,n-1)+"…":s}
+
+async function loadQuestions(id){
+  try{
+    const r = await fetch("data/"+id+".json");
+    if(!r.ok) return null;
+    return await r.json();
+  }catch(e){return null}
+}
+
+async function buildStats(){
+  const examData = {};
+  for (const e of EXAMS) {
+    const d = await loadQuestions(e.id);
+    if (d) examData[e.id] = d;
+  }
+
+  // Agrégats globaux
+  let gTotalQ = 0, gAnsweredQ = 0, gOkQ = 0, gOkPts = 0, gTotalPts = 0;
+  const examRows = [];
+  const allWrong = [];
+  const byCh = {}; // {chapName: {ok, total, pts, ptsTotal}}
+
+  for (const e of EXAMS) {
+    const data = examData[e.id];
+    if (!data) continue;
+    const st = getState(e.id);
+    const totalQ = data.questions.length;
+    const totalPts = data.questions.reduce((s,q)=>s+q.pts,0);
+    gTotalQ += totalQ;
+    gTotalPts += totalPts;
+
+    if (st && st.results) {
+      const answered = st.results.filter(r=>r!==null).length;
+      const ok = st.results.filter(r=>r===true).length;
+      const ptsObt = data.questions.reduce((s,q,i)=>s+(st.results[i]===true?q.pts:0),0);
+      gAnsweredQ += answered;
+      gOkQ += ok;
+      gOkPts += ptsObt;
+
+      const note = totalPts ? (5*ptsObt/totalPts + 1) : 1;
+      const pct = answered ? Math.round((ok/answered)*100) : 0;
+      examRows.push({id:e.id, title:e.title, subj:e.subj, answered, totalQ, ok, ptsObt, totalPts, note, pct});
+
+      // Wrong questions
+      st.results.forEach((r,i)=>{
+        if (r === false) {
+          allWrong.push({examId:e.id, examTitle:e.title, q:data.questions[i], idx:i});
+        }
+      });
+
+      // Per chapter
+      data.questions.forEach((q,i)=>{
+        if (!byCh[q.ch]) byCh[q.ch] = {ok:0, total:0, pts:0, ptsTotal:0};
+        if (st.results[i] !== null) {
+          byCh[q.ch].total++;
+          byCh[q.ch].ptsTotal += q.pts;
+          if (st.results[i] === true) {
+            byCh[q.ch].ok++;
+            byCh[q.ch].pts += q.pts;
+          }
+        }
+      });
+    } else {
+      examRows.push({id:e.id, title:e.title, subj:e.subj, answered:0, totalQ, ok:0, ptsObt:0, totalPts, note:null, pct:0});
+    }
+  }
+
+  // ---- Render hero ----
+  const gNote = gTotalPts ? (5*gOkPts/gTotalPts + 1) : 1;
+  const gPct = gAnsweredQ ? Math.round((gOkQ/gAnsweredQ)*100) : 0;
+  document.getElementById("heroQuestions").textContent = gAnsweredQ + " / " + gTotalQ;
+  document.getElementById("heroPct").textContent = gPct + " %";
+  const noteEl = document.getElementById("heroNote");
+  if (gAnsweredQ === 0) {
+    noteEl.textContent = "—";
+  } else {
+    noteEl.textContent = gNote.toFixed(2);
+    noteEl.className = "hero-num note " + noteClass(gNote);
+  }
+
+  // ---- Render exam list ----
+  document.getElementById("examList").innerHTML = examRows.map(r => {
+    const pct = r.totalQ ? (r.answered/r.totalQ)*100 : 0;
+    const barCls = r.answered === 0 ? "" : (r.pct >= 70 ? "good" : r.pct < 40 ? "bad" : "");
+    let noteHtml;
+    if (r.answered === 0) {
+      noteHtml = `<span class="mini-note empty">—</span>`;
+    } else {
+      noteHtml = `<span class="mini-note ${noteClass(r.note)}">${r.note.toFixed(1)}</span>`;
+    }
+    return `
+      <div class="exam-row">
+        <div style="flex:1">
+          <div class="exam-name">${escapeHtml(r.title)}</div>
+          <div class="exam-meta">${r.answered}/${r.totalQ} questions · ${r.ptsObt}/${r.totalPts} pts</div>
+        </div>
+        <div class="exam-right">
+          <div class="mini-bar"><div class="mini-bar-fill ${barCls}" style="width:${pct}%"></div></div>
+          ${noteHtml}
+          <a href="exam.html?id=${r.id}" class="exam-link">→</a>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // ---- Render wrong list ----
+  const wrongEl = document.getElementById("wrongList");
+  if (allWrong.length === 0) {
+    wrongEl.innerHTML = `<div class="empty">Aucune question ratée pour le moment.<br><strong>Continue de répondre aux examens.</strong></div>`;
+  } else {
+    wrongEl.innerHTML = `<div class="wrong-section">` + allWrong.slice(0,50).map(w => `
+      <div class="wrong-item">
+        <div class="wrong-q">
+          <div class="wrong-q-meta">${escapeHtml(w.examTitle)} · ${escapeHtml(w.q.ch)} · Q${escapeHtml(w.q.num)}</div>
+          ${escapeHtml(truncate(w.q.q, 140))}
+        </div>
+        <a href="exam.html?id=${w.examId}&jump=${w.idx}" class="wrong-link">Refaire</a>
+      </div>
+    `).join("") + (allWrong.length > 50 ? `<div class="empty" style="padding:14px 0 0">… et ${allWrong.length - 50} autres. Utilise « Refaire toutes les ratées » pour toutes les revoir.</div>` : "") + `</div>`;
+  }
+
+  // ---- Render chapter analysis ----
+  const chEl = document.getElementById("chList");
+  const chEntries = Object.entries(byCh).filter(([,v])=>v.total>0);
+  if (chEntries.length === 0) {
+    chEl.innerHTML = `<div class="empty">Réponds à quelques questions pour voir tes points forts et faibles par chapitre.</div>`;
+  } else {
+    chEl.innerHTML = chEntries.sort((a,b)=>(a[1].pts/a[1].ptsTotal)-(b[1].pts/b[1].ptsTotal)).map(([ch,v]) => {
+      const pct = v.ptsTotal ? Math.round((v.pts/v.ptsTotal)*100) : 0;
+      return `
+        <div class="ch-row">
+          <div class="ch-head">
+            <div class="ch-name">${escapeHtml(ch)}</div>
+            <div class="ch-score">${v.pts}/${v.ptsTotal} pts · ${pct}%</div>
+          </div>
+          <div class="ch-bar"><div class="ch-bar-fill" style="width:${pct}%;background:${pct>=70?'var(--success)':pct<40?'var(--danger)':'var(--primary)'}"></div></div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  // ---- Retry all wrong button ----
+  document.getElementById("retryAll").addEventListener("click", (e)=>{
+    e.preventDefault();
+    if (allWrong.length === 0) {
+      alert("Aucune question ratée à refaire.");
+      return;
+    }
+    // Build a virtual exam-only-wrong session: store in localStorage and redirect
+    const sess = {
+      title: "Refaire les ratées (" + allWrong.length + ")",
+      questions: allWrong.map(w => w.q)
+    };
+    localStorage.setItem("exam-wrong-session", JSON.stringify(sess));
+    location.href = "exam.html?id=wrong-session";
+  });
+
+  // ---- Reset all ----
+  document.getElementById("resetAll").addEventListener("click", ()=>{
+    if (!confirm("Effacer TOUTE ta progression sur tous les examens ? Cette action est irréversible.")) return;
+    Object.keys(localStorage).filter(k=>k.startsWith("exam-")).forEach(k=>localStorage.removeItem(k));
+    location.reload();
+  });
+}
+
+buildStats();
+
+// Service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").catch(()=>{});
+}
+</script>
+</body>
+</html>

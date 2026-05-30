@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a5cf5">
+<link rel="manifest" href="manifest.json">
+<title>CFC Dessinateur · Correcteur</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{
+    --text:#111;
+    --muted:#5a5a66;
+    --primary:#0a5cf5;
+    --primary-hover:#084ad6;
+    --border:rgba(0,0,0,.08);
+  }
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;padding:0;color:var(--text);
+    font-family:-apple-system,"SF Pro Display",BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;font-size:16px;
+    min-height:100vh;min-height:100dvh;
+    overflow-x:hidden;letter-spacing:-.005em;
+  }
+
+  .bg{position:fixed;inset:0;z-index:-2;background:#f2f3f5}
+
+  /* Liquid Glass mixin */
+  .glass{
+    position:relative;isolation:isolate;
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(24px) saturate(180%);
+    -webkit-backdrop-filter:blur(24px) saturate(180%);
+    border-radius:20px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.7),
+      inset 0 -1px 0 rgba(255,255,255,.15),
+      0 1px 2px rgba(0,0,0,.04),
+      0 10px 32px -10px rgba(0,0,0,.12);
+    border:.5px solid rgba(255,255,255,.6);
+  }
+  .glass::after{
+    content:"";position:absolute;left:6%;right:6%;top:0;height:45%;
+    border-radius:inherit;border-bottom-left-radius:0;border-bottom-right-radius:0;
+    background:linear-gradient(180deg, rgba(255,255,255,.35), transparent);
+    pointer-events:none;
+    z-index:-1;
+  }
+
+  body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+  .app{max-width:560px;margin:0 auto;padding:32px 20px 56px;position:relative;z-index:1}
+
+  .topline{font-size:13px;color:var(--muted);margin-bottom:24px;letter-spacing:.02em}
+
+  /* Nav links (Stats, Accueil) */
+  .nav-top{
+    display:flex;gap:6px;margin-bottom:28px;padding:5px;
+    /* glass */
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(20px) saturate(180%);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);
+    border-radius:14px;
+    border:.5px solid rgba(255,255,255,.6);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.7),
+      0 1px 2px rgba(0,0,0,.04);
+  }
+  .nav-top a{
+    flex:1;text-align:center;text-decoration:none;
+    padding:9px 12px;border-radius:10px;
+    font-size:13.5px;font-weight:500;color:var(--muted);
+    transition:all .15s;
+  }
+  .nav-top a.active{background:var(--primary);color:#fff;box-shadow:0 1px 3px rgba(10,92,245,.3)}
+  .nav-top a:not(.active):hover{background:rgba(255,255,255,.6);color:var(--text)}
+
+  h2{font-size:13px;font-weight:600;margin:24px 0 10px;color:var(--muted);padding:0 4px;letter-spacing:.04em;text-transform:uppercase}
+  h2:first-of-type{margin-top:0}
+
+  ul{
+    list-style:none;padding:6px;margin:0;
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(24px) saturate(180%);
+    -webkit-backdrop-filter:blur(24px) saturate(180%);
+    border-radius:18px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.7),
+      inset 0 -1px 0 rgba(255,255,255,.15),
+      0 1px 2px rgba(0,0,0,.04),
+      0 8px 28px -10px rgba(0,0,0,.12);
+    border:.5px solid rgba(255,255,255,.6);
+    position:relative;
+  }
+  ul::after{
+    content:"";position:absolute;left:5%;right:5%;top:0;height:50%;
+    border-radius:18px 18px 0 0;
+    background:linear-gradient(180deg, rgba(255,255,255,.3), transparent);
+    pointer-events:none;
+    z-index:0;
+  }
+  li{position:relative;z-index:1}
+  li + li{border-top:.5px solid rgba(0,0,0,.06)}
+  li a{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:12px 14px;text-decoration:none;color:var(--text);
+    border-radius:12px;
+    transition:background .2s;
+  }
+  li a:hover{background:rgba(255,255,255,.6)}
+  .name{font-size:14.5px;font-weight:500;letter-spacing:-.005em}
+  .meta{font-size:12.5px;color:var(--muted);white-space:nowrap;display:inline-flex;align-items:center;gap:8px}
+  .arrow{color:var(--muted);transition:transform .2s,color .15s;font-size:14px}
+  li a:hover .arrow{transform:translateX(3px);color:var(--primary)}
+  li.disabled a{opacity:.35;pointer-events:none}
+
+  /* Stats badge on exam if has data */
+  .badge{
+    display:inline-block;
+    font-size:11px;padding:2px 7px;border-radius:6px;
+    background:rgba(10,92,245,.12);color:var(--primary);
+    font-weight:600;margin-right:6px;
+  }
+  .badge.good{background:rgba(10,138,79,.12);color:#0a8a4f}
+  .badge.bad{background:rgba(196,48,43,.12);color:#c4302b}
+
+  footer{margin-top:40px;padding:16px 4px;font-size:12px;color:var(--muted);line-height:1.6;text-align:center}
+
+  @media (max-width:480px){
+    .app{padding:24px 14px 56px}
+    li a{padding:11px 12px}
+    .name{font-size:14px}
+    .meta{font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<div class="app">
+  <div class="topline">CFC Dessinateur · Orientation Architecture · Canton de Vaud</div>
+
+  <div class="nav-top">
+    <a href="index.html" class="active">Examens</a>
+    <a href="stats.html">Statistiques</a>
+  </div>
+
+  <h2>Matériaux</h2>
+  <ul id="matList"></ul>
+
+  <h2>Construction</h2>
+  <ul id="constrList"></ul>
+
+  <footer>
+    Réponses sourcées sur les cours LM-A (Lehrmittel Architecture).<br>
+    Tes données restent stockées localement sur ton appareil.
+  </footer>
+</div>
+
+<script>
+const EXAMS = {
+  materiaux: [
+    {year:"Mix",  file:"materiaux-mix",  ready:true, pts:135, time:"45 min", questions:58, mix:true},
+    {year:2023, file:"materiaux-2023", ready:true, pts:120, time:"45 min", questions:51},
+    {year:2022, file:"materiaux-2022", ready:true, pts:150, time:"45 min", questions:62},
+    {year:2021, file:"materiaux-2021", ready:true, pts:120, time:"45 min", questions:50},
+    {year:2019, file:"materiaux-2019", ready:true, pts:135, time:"45 min", questions:54},
+    {year:2018, file:"materiaux-2018", ready:true, pts:147, time:"45 min", questions:46}
+  ],
+  construction: [
+    {year:"Mix",  file:"construction-mix",  ready:true, pts:200, time:"1h30", questions:80, mix:true},
+    {year:2023, file:"construction-2023", ready:true, pts:188, time:"1h30", questions:75},
+    {year:2022, file:"construction-2022", ready:true, pts:184, time:"1h30", questions:73},
+    {year:2021, file:"construction-2021", ready:true, pts:180, time:"1h30", questions:77},
+    {year:2019, file:"construction-2019", ready:true, pts:185, time:"1h30", questions:81},
+    {year:2018, file:"construction-2018", ready:true, pts:239, time:"1h30", questions:87}
+  ]
+};
+
+function getState(id){
+  try{return JSON.parse(localStorage.getItem("exam-"+id+"-v1"))||null}catch(e){return null}
+}
+
+function renderList(list, listId, subject){
+  document.getElementById(listId).innerHTML = list.map(e => {
+    const name = e.mix ? `${subject} — Mix` : `${subject} ${e.year}`;
+    const meta = `${e.questions} questions · ${e.pts} pts · ${e.time}`;
+    const cls = e.ready ? "" : "disabled";
+    const st = getState(e.file);
+    let badge = "";
+    if (st && st.results) {
+      const done = st.results.filter(r=>r!==null).length;
+      if (done > 0) {
+        const ok = st.results.filter(r=>r===true).length;
+        const cls2 = ok/done >= .7 ? "good" : ok/done < .4 ? "bad" : "";
+        badge = `<span class="badge ${cls2}">${ok}/${done}</span>`;
+      }
+    }
+    return `<li class="${cls}"><a href="exam.html?id=${e.file}"><span class="name">${badge}${name}</span><span class="meta">${meta}<span class="arrow">→</span></span></a></li>`;
+  }).join("");
+}
+
+renderList(EXAMS.materiaux, "matList", "Matériaux");
+renderList(EXAMS.construction, "constrList", "Construction");
+
+// Register service worker for PWA
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "CFC Dessinateur · Correcteur",
+  "short_name": "CFC Correcteur",
+  "description": "Correcteur d'examens CFC Dessinateur architecture VD. Toutes les sessions, corrections sourcées sur les cours LM-A.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f3f5",
+  "theme_color": "#0a5cf5",
+  "orientation": "portrait",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112' fill='%230a5cf5'/%3E%3Ctext x='256' y='340' font-size='240' font-family='-apple-system,BlinkMacSystemFont,sans-serif' font-weight='700' text-anchor='middle' fill='white' letter-spacing='-12'%3ECFC%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

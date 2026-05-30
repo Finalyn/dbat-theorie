@@ -1,0 +1,14 @@
+# Texte brut extrait des PDFs LM-A — matériel sous licence, ne pas publier
+_sources/
+
+# Ancien fichier standalone (remplacé par exam.html + data/materiaux-2022.json)
+materiaux-2022.html
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
