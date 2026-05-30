@@ -1,4 +1,4 @@
-const CACHE = "dbat-entraineur-v2";
+const CACHE = "dbat-entraineur-v3";
 const FILES = [
   "./",
   "./index.html",
