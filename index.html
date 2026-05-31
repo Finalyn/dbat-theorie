@@ -156,6 +156,9 @@
   <h2>Construction</h2>
   <ul id="constrList"></ul>
 
+  <h2>Visualisation</h2>
+  <ul id="visuList"></ul>
+
   <footer>
     Réponses sourcées sur les cours LM-A (Lehrmittel Architecture).<br>
     Tes données restent stockées localement sur ton appareil.
@@ -179,6 +182,14 @@ const EXAMS = {
     {year:2021, file:"construction-2021", ready:true, pts:180, time:"1h30", questions:77},
     {year:2019, file:"construction-2019", ready:true, pts:185, time:"1h30", questions:81},
     {year:2018, file:"construction-2018", ready:true, pts:239, time:"1h30", questions:87}
+  ],
+  visualisation: [
+    {year:"Mix",  file:"visualisation-mix",  ready:true, pts:80, time:"45 min", questions:23, mix:true},
+    {year:2023, file:"visualisation-2023", ready:true, pts:69, time:"45 min", questions:14},
+    {year:2022, file:"visualisation-2022", ready:true, pts:71, time:"45 min", questions:15},
+    {year:2021, file:"visualisation-2021", ready:true, pts:79, time:"45 min", questions:13},
+    {year:2019, file:"visualisation-2019", ready:true, pts:90, time:"45 min", questions:21},
+    {year:2018, file:"visualisation-2018", ready:true, pts:88, time:"45 min", questions:13}
   ]
 };
 
@@ -207,6 +218,7 @@ function renderList(list, listId, subject){
 
 renderList(EXAMS.materiaux, "matList", "Matériaux");
 renderList(EXAMS.construction, "constrList", "Construction");
+renderList(EXAMS.visualisation, "visuList", "Visualisation");
 
 // Register service worker for PWA
 if ("serviceWorker" in navigator) {

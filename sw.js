@@ -1,4 +1,4 @@
-const CACHE = "dbat-entraineur-v3";
+const CACHE = "dbat-entraineur-v4";
 const FILES = [
   "./",
   "./index.html",
@@ -20,7 +20,13 @@ const FILES = [
   "./data/construction-2021.json",
   "./data/construction-2022.json",
   "./data/construction-2023.json",
-  "./data/construction-mix.json"
+  "./data/construction-mix.json",
+  "./data/visualisation-2018.json",
+  "./data/visualisation-2019.json",
+  "./data/visualisation-2021.json",
+  "./data/visualisation-2022.json",
+  "./data/visualisation-2023.json",
+  "./data/visualisation-mix.json"
 ];
 
 self.addEventListener("install", e => {
