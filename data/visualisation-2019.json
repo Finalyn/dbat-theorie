@@ -7,26 +7,173 @@
     "duration": "45 min"
   },
   "questions": [
-    {"ch":"1. Visualisation","num":"1.1","pts":4,"q":"Nommer les 4 types de lucarnes :","a":"Types courants de lucarnes :\n1. Lucarne RAMPANTE (chevalet / à fronton triangulaire) — toit à 2 pans\n2. Lucarne JACOBINE (à 3 pans / capucine) — toit qui retombe sur les 3 côtés\n3. Lucarne EN CHIEN-ASSIS (gerbière) — toit en pente unique vers l'arrière\n4. Lucarne RETROUSSÉE / RAMPANTE EN PLEIN CINTRE / ŒIL-DE-BŒUF (circulaire ou ovale)\n(Aussi : meunière, demoiselle, à la capucine, en bâtière.)\n\n[Source : Charpente CFC]"},
-    {"ch":"1. Visualisation","num":"1.2","pts":6,"q":"Nommer les 6 éléments illustrés :","a":"Sans l'image, vocabulaire courant pour cette question (charpente, façade, équipements) :\n• Lambrequin, chéneau, descente EP, naissance, crapaudine\n• Faîtage, arêtier, noue, brisis, terrasson\n• Tuile faîtière, tuile de rive, tuile de pénétration\n• Volet, store, bannette, marquise, auvent\n\n[Source : Vocabulaire CFC]"},
-    {"ch":"1. Visualisation","num":"1.3","pts":2,"q":"Expliquer ce que fait la personne sur l'image et dans quel but :","a":"Selon l'image (souvent un géomètre ou ouvrier) :\n• GÉOMÈTRE qui prend des mesures à la station totale (tachéomètre) pour implanter le bâtiment ou faire des relevés altimétriques.\n• OUVRIER qui pose un cordeau / vérifie l'aplomb avec un niveau ou un fil à plomb.\n• Maçon qui dresse un mur, ravale une façade…\n\nBut typique : précision dans l'exécution selon les plans, contrôle qualité, alignements.\n\n[Source : Métier CFC]"},
-    {"ch":"1. Visualisation","num":"1.4","pts":3,"q":"Phénomène représenté sur la photo + 2 raisons :","a":"Phénomènes courants en photo de bâtiment :\n• EFFLORESCENCE (dépôts blancs salins sur maçonnerie). Raisons : humidité qui dissout les sels du mortier ; remontées capillaires ; matériaux contenant trop de sulfates.\n• FISSURES. Raisons : tassement différentiel, retrait du béton, sollicitations thermiques.\n• CONDENSATION / moisissures. Raisons : ponts thermiques, manque de ventilation, défaut d'isolation.\n• Détérioration béton / éclatement. Raisons : corrosion des armatures (carbonatation), gel, chocs.\n\n[Source : Pathologies du bâtiment]"},
-    {"ch":"1. Visualisation","num":"1.5","pts":1,"q":"Utilisation spécifique du cadre illustré :","a":"Cadre de menuiserie spéciale possible :\n• Cadre de PORTE-FENÊTRE / coulissant (galandage) → grande ouverture, accès terrasse.\n• Cadre BASCULANT / fenêtre de toit → toiture en pente.\n• Cadre BOIS-MÉTAL → exigences thermiques et entretien minimum.\n• Cadre COUPE-FEU EI30 → compartimentage incendie.\n\n[Source : Menuiserie CFC]"},
-    {"ch":"1. Visualisation","num":"1.6","pts":4,"q":"Nommer les 4 parties illustrées :","a":"Sans image précise, éléments courants à 4 :\n• Coupe sur fenêtre : dormant, ouvrant, vitrage, parclose\n• Coupe sur mur : isolation, brique, doublage plâtre, lame d'air\n• Toiture : couverture, sous-couverture, chevron, panne\n• Plancher bois : solive, lambourde, parquet, plinthe\n\n[Source : Vocabulaire CFC]"},
-    {"ch":"1. Visualisation","num":"1.7","pts":6,"q":"Désigner les 6 parties de la batterie d'entrée d'eau :","a":"Batterie d'entrée d'eau dans un logement, éléments typiques :\n1. Compteur d'eau\n2. Vanne d'arrêt principale\n3. Clapet anti-retour\n4. Filtre / purgeur\n5. Détendeur / réducteur de pression\n6. Manomètre\n(Aussi : bipasse, vase d'expansion, robinet de vidange.)\n\n[Source : Sanitaires CFC]"},
-    {"ch":"1. Visualisation","num":"1.8","pts":2,"q":"Nommer les pièces ci-dessous :","a":"Sans image, options pour 2 pièces :\n• Pièces de charpente : panne, chevron, arbalétrier, poinçon\n• Pièces sanitaires : siphon, robinet, vanne\n• Pièces ferblanterie : crapaudine, larmier\n• Pièces menuiserie : paumelle, gond, parclose, butée\n\n[Source : Vocabulaire CFC]"},
-    {"ch":"1. Visualisation","num":"1.9","pts":2,"q":"Nommer les 2 modes de pose des parquets :","a":"Modes de pose typiques :\n1. À la FRANÇAISE (lames longues parallèles, alignées)\n2. À l'ANGLAISE (lames à coupes perdues, plus simple)\n3. À BÂTONS ROMPUS / à chevron (45°)\n4. POINT DE HONGRIE (lames coupées en biais)\n5. MOSAÏQUE / damier\n6. PONT DE BATEAU (lames longues + joint noir)\n\n[Source : Revêtements de sol]"},
-    {"ch":"1. Visualisation","num":"1.10","pts":10,"q":"Nommer les types de charpente (A-C) et 7 éléments :","a":"3 TYPES DE CHARPENTE :\nA. Charpente TRADITIONNELLE (à fermes en bois massif assemblées)\nB. Charpente INDUSTRIELLE / fermettes (préfabriquées légères en bois assemblé par connecteurs)\nC. Charpente METALLIQUE ou en BLC (bois lamellé-collé pour grandes portées)\n\nÉLÉMENTS PRINCIPAUX :\n1. Faîte / faîtière\n2. Arbalétrier (poutre inclinée)\n3. Entrait (poutre horizontale de base)\n4. Poinçon (poteau central vertical)\n5. Panne (poutre horizontale qui supporte les chevrons)\n6. Chevron (porte les liteaux et les tuiles)\n7. Liteau / contre-lattage\n\n[Source : Charpente CFC]"},
-    {"ch":"1. Visualisation","num":"1.11","pts":6,"q":"Nommer les matériaux des 6 éléments :","a":"Matériaux courants à identifier :\n• Bois (massif, lamellé-collé, contreplaqué)\n• Béton armé, béton apparent\n• Brique de terre cuite, brique clinker, parpaing\n• Pierre naturelle (calcaire, granit, marbre)\n• Acier (laminé, galvanisé, inoxydable)\n• Verre (simple, isolant, feuilleté, trempé)\n• Zinc-titane, cuivre, aluminium\n\n[Source : LM-A Matériaux]"},
-    {"ch":"1. Visualisation","num":"1.12","pts":6,"q":"Nommer précisément les 6 produits à base de bois :","a":"Dérivés du bois courants :\n• Bois massif (planche, poutre)\n• OSB (lamelles orientées)\n• Contreplaqué (multiplis)\n• MDF / HDF (panneaux de fibres)\n• Aggloméré (panneau de particules)\n• Bois lamellé-collé (BLC)\n• Bois lamellé-croisé (CLT / KLH)\n• Lambris, parquet, panneau stratifié\n\n[Source : LM-A Bois fasc. 07]"},
-    {"ch":"1. Visualisation","num":"1.13","pts":3,"q":"Dessiner en perspective les 3 assemblages :\n• Tenon et Mortaise / Embrèvement / Mi-bois","a":"3 assemblages traditionnels de charpente :\n\n• TENON-MORTAISE : une pièce a un TENON (excroissance rectangulaire) qui s'insère dans la MORTAISE (creux rectangulaire) de l'autre. Fixé par cheville bois. Assemblage le plus courant.\n\n• EMBRÈVEMENT : extrémité d'une pièce taillée en biseau qui vient s'appuyer contre une entaille dans l'autre. Reprend les efforts de COMPRESSION (typique : arbalétrier sur entrait).\n\n• MI-BOIS : 2 pièces dont la MOITIÉ de l'épaisseur est entaillée, qui s'emboîtent à plat. Assemblage simple, sécurisé par vis ou cheville.\n\n[Source : Charpente traditionnelle]"},
-    {"ch":"1. Visualisation","num":"1.14","pts":5,"q":"Style architectural + ordre chronologique des 5 bâtiments :","a":"Du plus ancien au plus récent :\n1. ROMAN (XI-XII s.)\n2. GOTHIQUE (XII-XV s.)\n3. RENAISSANCE (XV-XVI s.)\n4. BAROQUE / CLASSIQUE (XVII-XVIII s.)\n5. MODERNE / CONTEMPORAIN (XX-XXI s.)\n\n[Source : Histoire architecture]"},
-    {"ch":"1. Visualisation","num":"1.15","pts":3,"q":"Nommer les 3 principaux ordres grecs des colonnes :","a":"1. DORIQUE — chapiteau simple (echinus + abaque), colonne robuste cannelée SANS base. Le plus ancien.\n2. IONIQUE — chapiteau à VOLUTES (spirales), colonne élancée avec base.\n3. CORINTHIEN — chapiteau orné de FEUILLES D'ACANTHE et volutes. Le plus tardif et décoré.\n\n[Source : Architecture grecque]"},
-    {"ch":"1. Visualisation","num":"1.16","pts":1,"q":"Nommer les 2 éléments illustrés :","a":"Selon image — vocabulaire courant pour des paires :\n• Tuile faîtière / tuile de rive\n• Arc en plein cintre / arc brisé\n• Voûte en berceau / voûte croisée\n• Cariatide / atlante (statue-colonne)\n\n[Source : Vocabulaire architectural]"},
-    {"ch":"1. Visualisation","num":"1.17","pts":5,"q":"Nommer les parties d'une église (10 éléments) + indiquer le Nord :","a":"Plan d'une église chrétienne traditionnelle, parties typiques :\n1. NARTHEX (entrée / vestibule, à l'ouest)\n2. NEF principale (corps central, fidèles)\n3. BAS-CÔTÉS (collatéraux)\n4. CROISÉE DU TRANSEPT\n5. TRANSEPT (bras de la croix)\n6. CHŒUR (réservé au clergé, autel)\n7. ABSIDE / chevet (arrondi à l'est)\n8. DÉAMBULATOIRE\n9. CHAPELLES RAYONNANTES\n10. CLOCHER / tour\n\nNord : généralement, l'église est orientée Est-Ouest (chœur à l'EST, vers Jérusalem). Le Nord est donc à gauche en regardant le plan vers l'est.\n\n[Source : Architecture religieuse]"},
-    {"ch":"1. Visualisation","num":"1.18","pts":5,"q":"Architectes des bâtiments listés :\n1. Philharmonie de l'Elbe (Hambourg)\n2. Tour Swiss Re (Londres)\n3. Église de la lumière (Osaka)\n4. Centre Heydar Aliyev (Baku)\n5. Fiore di pietra (Monte Generoso)","a":"1. Philharmonie de l'Elbe → HERZOG & DE MEURON\n2. Tour Swiss Re (« Gherkin », 30 St Mary Axe) → Norman FOSTER\n3. Église de la lumière → Tadao ANDO\n4. Centre Heydar Aliyev → Zaha HADID\n5. Fiore di pietra → Mario BOTTA\n\n[Source : Architecture contemporaine]"},
-    {"ch":"1. Visualisation","num":"1.19","pts":4,"q":"Villes des bâtiments par architecte :\nJean Nouvel / Frank O. Gehry / Walter Gropius / Renzo Piano & Richard Rogers / Oscar Niemeyer / Herzog & De Meuron / Kengo Kuma / Frank Lloyd Wright","a":"Œuvres emblématiques typiques :\n• Jean NOUVEL — Institut du Monde Arabe (PARIS), Philharmonie (Paris), Louvre Abu Dhabi\n• Frank O. GEHRY — Guggenheim (BILBAO), Walt Disney Concert Hall (Los Angeles)\n• Walter GROPIUS — Bauhaus (DESSAU)\n• Renzo PIANO & R. ROGERS — Centre Pompidou (PARIS)\n• Oscar NIEMEYER — Brasilia / Cathédrale de Brasilia (BRASILIA)\n• HERZOG & DE MEURON — Tate Modern (LONDRES), Allianz Arena (Munich)\n• Kengo KUMA — Stade olympique (TOKYO), V&A (Dundee)\n• Frank Lloyd WRIGHT — Fallingwater (MILL RUN), Guggenheim (New York)\n\n[Source : Architecture contemporaine]"},
-    {"ch":"1. Visualisation","num":"1.20","pts":6,"q":"Nommer les 6 éléments (A-F) :","a":"Sans image, éléments courants à 6 :\n• Charpente : faîte, arbalétrier, entrait, poinçon, chevron, panne\n• Vitrage : vitrage extérieur, intercalaire, gaz argon, vitrage intérieur, couche sélective\n• Fenêtre : dormant, ouvrant, parclose, vitrage, joint, ferrure\n\n[Source : Vocabulaire CFC]"},
-    {"ch":"1. Visualisation","num":"1.21","pts":6,"q":"Nommer les 6 éléments (A-F) :","a":"Selon image, éléments techniques courants :\n• Cadre fenêtre : tableau, battue, parclose, larmier, traverse, montant\n• Ferrures : paumelle, crémone, poignée, charnière, gâche, butoir\n• Couverture : tuile, faîtière, sous-couverture, lattage, contre-lattage, chevron\n\n[Source : Vocabulaire CFC]"}
+    {
+      "ch": "1. Visualisation",
+      "num": "1.1",
+      "pts": 4,
+      "q": "Nommer les 4 types de lucarnes :",
+      "a": "Types courants de lucarnes :\n1. Lucarne RAMPANTE (chevalet / à fronton triangulaire) — toit à 2 pans\n2. Lucarne JACOBINE (à 3 pans / capucine) — toit qui retombe sur les 3 côtés\n3. Lucarne EN CHIEN-ASSIS (gerbière) — toit en pente unique vers l'arrière\n4. Lucarne RETROUSSÉE / RAMPANTE EN PLEIN CINTRE / ŒIL-DE-BŒUF (circulaire ou ovale)\n(Aussi : meunière, demoiselle, à la capucine, en bâtière.)\n\n[Source : Charpente CFC]",
+      "img": "images/visu-2019/p3.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.2",
+      "pts": 6,
+      "q": "Nommer les 6 éléments illustrés :",
+      "a": "Sans l'image, vocabulaire courant pour cette question (charpente, façade, équipements) :\n• Lambrequin, chéneau, descente EP, naissance, crapaudine\n• Faîtage, arêtier, noue, brisis, terrasson\n• Tuile faîtière, tuile de rive, tuile de pénétration\n• Volet, store, bannette, marquise, auvent\n\n[Source : Vocabulaire CFC]",
+      "img": "images/visu-2019/p3.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.3",
+      "pts": 2,
+      "q": "Expliquer ce que fait la personne sur l'image et dans quel but :",
+      "a": "Selon l'image (souvent un géomètre ou ouvrier) :\n• GÉOMÈTRE qui prend des mesures à la station totale (tachéomètre) pour implanter le bâtiment ou faire des relevés altimétriques.\n• OUVRIER qui pose un cordeau / vérifie l'aplomb avec un niveau ou un fil à plomb.\n• Maçon qui dresse un mur, ravale une façade…\n\nBut typique : précision dans l'exécution selon les plans, contrôle qualité, alignements.\n\n[Source : Métier CFC]",
+      "img": "images/visu-2019/p5.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.4",
+      "pts": 3,
+      "q": "Phénomène représenté sur la photo + 2 raisons :",
+      "a": "Phénomènes courants en photo de bâtiment :\n• EFFLORESCENCE (dépôts blancs salins sur maçonnerie). Raisons : humidité qui dissout les sels du mortier ; remontées capillaires ; matériaux contenant trop de sulfates.\n• FISSURES. Raisons : tassement différentiel, retrait du béton, sollicitations thermiques.\n• CONDENSATION / moisissures. Raisons : ponts thermiques, manque de ventilation, défaut d'isolation.\n• Détérioration béton / éclatement. Raisons : corrosion des armatures (carbonatation), gel, chocs.\n\n[Source : Pathologies du bâtiment]",
+      "img": "images/visu-2019/p6.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.5",
+      "pts": 1,
+      "q": "Utilisation spécifique du cadre illustré :",
+      "a": "Cadre de menuiserie spéciale possible :\n• Cadre de PORTE-FENÊTRE / coulissant (galandage) → grande ouverture, accès terrasse.\n• Cadre BASCULANT / fenêtre de toit → toiture en pente.\n• Cadre BOIS-MÉTAL → exigences thermiques et entretien minimum.\n• Cadre COUPE-FEU EI30 → compartimentage incendie.\n\n[Source : Menuiserie CFC]",
+      "img": "images/visu-2019/p7.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.6",
+      "pts": 4,
+      "q": "Nommer les 4 parties illustrées :",
+      "a": "Sans image précise, éléments courants à 4 :\n• Coupe sur fenêtre : dormant, ouvrant, vitrage, parclose\n• Coupe sur mur : isolation, brique, doublage plâtre, lame d'air\n• Toiture : couverture, sous-couverture, chevron, panne\n• Plancher bois : solive, lambourde, parquet, plinthe\n\n[Source : Vocabulaire CFC]",
+      "img": "images/visu-2019/p8.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.7",
+      "pts": 6,
+      "q": "Désigner les 6 parties de la batterie d'entrée d'eau :",
+      "a": "Batterie d'entrée d'eau dans un logement, éléments typiques :\n1. Compteur d'eau\n2. Vanne d'arrêt principale\n3. Clapet anti-retour\n4. Filtre / purgeur\n5. Détendeur / réducteur de pression\n6. Manomètre\n(Aussi : bipasse, vase d'expansion, robinet de vidange.)\n\n[Source : Sanitaires CFC]",
+      "img": "images/visu-2019/p9.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.8",
+      "pts": 2,
+      "q": "Nommer les pièces ci-dessous :",
+      "a": "Sans image, options pour 2 pièces :\n• Pièces de charpente : panne, chevron, arbalétrier, poinçon\n• Pièces sanitaires : siphon, robinet, vanne\n• Pièces ferblanterie : crapaudine, larmier\n• Pièces menuiserie : paumelle, gond, parclose, butée\n\n[Source : Vocabulaire CFC]",
+      "img": "images/visu-2019/p10.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.9",
+      "pts": 2,
+      "q": "Nommer les 2 modes de pose des parquets :",
+      "a": "Modes de pose typiques :\n1. À la FRANÇAISE (lames longues parallèles, alignées)\n2. À l'ANGLAISE (lames à coupes perdues, plus simple)\n3. À BÂTONS ROMPUS / à chevron (45°)\n4. POINT DE HONGRIE (lames coupées en biais)\n5. MOSAÏQUE / damier\n6. PONT DE BATEAU (lames longues + joint noir)\n\n[Source : Revêtements de sol]",
+      "img": "images/visu-2019/p10.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.10",
+      "pts": 10,
+      "q": "Nommer les types de charpente (A-C) et 7 éléments :",
+      "a": "3 TYPES DE CHARPENTE :\nA. Charpente TRADITIONNELLE (à fermes en bois massif assemblées)\nB. Charpente INDUSTRIELLE / fermettes (préfabriquées légères en bois assemblé par connecteurs)\nC. Charpente METALLIQUE ou en BLC (bois lamellé-collé pour grandes portées)\n\nÉLÉMENTS PRINCIPAUX :\n1. Faîte / faîtière\n2. Arbalétrier (poutre inclinée)\n3. Entrait (poutre horizontale de base)\n4. Poinçon (poteau central vertical)\n5. Panne (poutre horizontale qui supporte les chevrons)\n6. Chevron (porte les liteaux et les tuiles)\n7. Liteau / contre-lattage\n\n[Source : Charpente CFC]",
+      "img": "images/visu-2019/p11.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.11",
+      "pts": 6,
+      "q": "Nommer les matériaux des 6 éléments :",
+      "a": "Matériaux courants à identifier :\n• Bois (massif, lamellé-collé, contreplaqué)\n• Béton armé, béton apparent\n• Brique de terre cuite, brique clinker, parpaing\n• Pierre naturelle (calcaire, granit, marbre)\n• Acier (laminé, galvanisé, inoxydable)\n• Verre (simple, isolant, feuilleté, trempé)\n• Zinc-titane, cuivre, aluminium\n\n[Source : LM-A Matériaux]",
+      "img": "images/visu-2019/p12.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.12",
+      "pts": 6,
+      "q": "Nommer précisément les 6 produits à base de bois :",
+      "a": "Dérivés du bois courants :\n• Bois massif (planche, poutre)\n• OSB (lamelles orientées)\n• Contreplaqué (multiplis)\n• MDF / HDF (panneaux de fibres)\n• Aggloméré (panneau de particules)\n• Bois lamellé-collé (BLC)\n• Bois lamellé-croisé (CLT / KLH)\n• Lambris, parquet, panneau stratifié\n\n[Source : LM-A Bois fasc. 07]",
+      "img": "images/visu-2019/p13.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.13",
+      "pts": 3,
+      "q": "Dessiner en perspective les 3 assemblages :\n• Tenon et Mortaise / Embrèvement / Mi-bois",
+      "a": "3 assemblages traditionnels de charpente :\n\n• TENON-MORTAISE : une pièce a un TENON (excroissance rectangulaire) qui s'insère dans la MORTAISE (creux rectangulaire) de l'autre. Fixé par cheville bois. Assemblage le plus courant.\n\n• EMBRÈVEMENT : extrémité d'une pièce taillée en biseau qui vient s'appuyer contre une entaille dans l'autre. Reprend les efforts de COMPRESSION (typique : arbalétrier sur entrait).\n\n• MI-BOIS : 2 pièces dont la MOITIÉ de l'épaisseur est entaillée, qui s'emboîtent à plat. Assemblage simple, sécurisé par vis ou cheville.\n\n[Source : Charpente traditionnelle]",
+      "img": "images/visu-2019/p14.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.14",
+      "pts": 5,
+      "q": "Style architectural + ordre chronologique des 5 bâtiments :",
+      "a": "Du plus ancien au plus récent :\n1. ROMAN (XI-XII s.)\n2. GOTHIQUE (XII-XV s.)\n3. RENAISSANCE (XV-XVI s.)\n4. BAROQUE / CLASSIQUE (XVII-XVIII s.)\n5. MODERNE / CONTEMPORAIN (XX-XXI s.)\n\n[Source : Histoire architecture]",
+      "img": "images/visu-2019/p15.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.15",
+      "pts": 3,
+      "q": "Nommer les 3 principaux ordres grecs des colonnes :",
+      "a": "1. DORIQUE — chapiteau simple (echinus + abaque), colonne robuste cannelée SANS base. Le plus ancien.\n2. IONIQUE — chapiteau à VOLUTES (spirales), colonne élancée avec base.\n3. CORINTHIEN — chapiteau orné de FEUILLES D'ACANTHE et volutes. Le plus tardif et décoré.\n\n[Source : Architecture grecque]",
+      "img": "images/visu-2019/p16.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.16",
+      "pts": 1,
+      "q": "Nommer les 2 éléments illustrés :",
+      "a": "Selon image — vocabulaire courant pour des paires :\n• Tuile faîtière / tuile de rive\n• Arc en plein cintre / arc brisé\n• Voûte en berceau / voûte croisée\n• Cariatide / atlante (statue-colonne)\n\n[Source : Vocabulaire architectural]",
+      "img": "images/visu-2019/p16.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.17",
+      "pts": 5,
+      "q": "Nommer les parties d'une église (10 éléments) + indiquer le Nord :",
+      "a": "Plan d'une église chrétienne traditionnelle, parties typiques :\n1. NARTHEX (entrée / vestibule, à l'ouest)\n2. NEF principale (corps central, fidèles)\n3. BAS-CÔTÉS (collatéraux)\n4. CROISÉE DU TRANSEPT\n5. TRANSEPT (bras de la croix)\n6. CHŒUR (réservé au clergé, autel)\n7. ABSIDE / chevet (arrondi à l'est)\n8. DÉAMBULATOIRE\n9. CHAPELLES RAYONNANTES\n10. CLOCHER / tour\n\nNord : généralement, l'église est orientée Est-Ouest (chœur à l'EST, vers Jérusalem). Le Nord est donc à gauche en regardant le plan vers l'est.\n\n[Source : Architecture religieuse]",
+      "img": "images/visu-2019/p17.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.18",
+      "pts": 5,
+      "q": "Architectes des bâtiments listés :\n1. Philharmonie de l'Elbe (Hambourg)\n2. Tour Swiss Re (Londres)\n3. Église de la lumière (Osaka)\n4. Centre Heydar Aliyev (Baku)\n5. Fiore di pietra (Monte Generoso)",
+      "a": "1. Philharmonie de l'Elbe → HERZOG & DE MEURON\n2. Tour Swiss Re (« Gherkin », 30 St Mary Axe) → Norman FOSTER\n3. Église de la lumière → Tadao ANDO\n4. Centre Heydar Aliyev → Zaha HADID\n5. Fiore di pietra → Mario BOTTA\n\n[Source : Architecture contemporaine]",
+      "img": "images/visu-2019/p18.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.19",
+      "pts": 4,
+      "q": "Villes des bâtiments par architecte :\nJean Nouvel / Frank O. Gehry / Walter Gropius / Renzo Piano & Richard Rogers / Oscar Niemeyer / Herzog & De Meuron / Kengo Kuma / Frank Lloyd Wright",
+      "a": "Œuvres emblématiques typiques :\n• Jean NOUVEL — Institut du Monde Arabe (PARIS), Philharmonie (Paris), Louvre Abu Dhabi\n• Frank O. GEHRY — Guggenheim (BILBAO), Walt Disney Concert Hall (Los Angeles)\n• Walter GROPIUS — Bauhaus (DESSAU)\n• Renzo PIANO & R. ROGERS — Centre Pompidou (PARIS)\n• Oscar NIEMEYER — Brasilia / Cathédrale de Brasilia (BRASILIA)\n• HERZOG & DE MEURON — Tate Modern (LONDRES), Allianz Arena (Munich)\n• Kengo KUMA — Stade olympique (TOKYO), V&A (Dundee)\n• Frank Lloyd WRIGHT — Fallingwater (MILL RUN), Guggenheim (New York)\n\n[Source : Architecture contemporaine]",
+      "img": "images/visu-2019/p19.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.20",
+      "pts": 6,
+      "q": "Nommer les 6 éléments (A-F) :",
+      "a": "Sans image, éléments courants à 6 :\n• Charpente : faîte, arbalétrier, entrait, poinçon, chevron, panne\n• Vitrage : vitrage extérieur, intercalaire, gaz argon, vitrage intérieur, couche sélective\n• Fenêtre : dormant, ouvrant, parclose, vitrage, joint, ferrure\n\n[Source : Vocabulaire CFC]",
+      "img": "images/visu-2019/p20.jpg"
+    },
+    {
+      "ch": "1. Visualisation",
+      "num": "1.21",
+      "pts": 6,
+      "q": "Nommer les 6 éléments (A-F) :",
+      "a": "Selon image, éléments techniques courants :\n• Cadre fenêtre : tableau, battue, parclose, larmier, traverse, montant\n• Ferrures : paumelle, crémone, poignée, charnière, gâche, butoir\n• Couverture : tuile, faîtière, sous-couverture, lattage, contre-lattage, chevron\n\n[Source : Vocabulaire CFC]",
+      "img": "images/visu-2019/p21.jpg"
+    }
   ]
 }

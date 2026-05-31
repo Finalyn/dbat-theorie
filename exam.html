@@ -87,6 +87,14 @@
   .qnum{font-size:13px;color:var(--muted);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
   .pts{color:var(--text);font-weight:500}
   .question{font-size:17px;font-weight:500;line-height:1.5;margin-bottom:16px;white-space:pre-wrap;color:var(--text);letter-spacing:-.01em}
+  .q-image{
+    display:block;max-width:100%;height:auto;
+    margin:0 0 16px;border-radius:14px;
+    border:.5px solid rgba(0,0,0,.12);
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    cursor:zoom-in;background:#fff;
+  }
+  .q-image-hint{font-size:12px;color:var(--muted);margin:-12px 0 14px;text-align:center}
 
   textarea{
     width:100%;
@@ -314,6 +322,7 @@ function render(){
       <div class="chapter">${escapeHtml(q.ch)} · /${ptsByCh[q.ch]} pts</div>
       <div class="qnum"><span>Question ${escapeHtml(q.num)}</span><span class="pts">${q.pts} pt${q.pts>1?"s":""}</span></div>
       <div class="question">${escapeHtml(q.q)}</div>
+      ${q.img ? `<a href="${escapeHtml(q.img)}" target="_blank" rel="noopener"><img src="${escapeHtml(q.img)}" alt="Illustration question" class="q-image" loading="lazy"></a><div class="q-image-hint">Toucher l'image pour zoomer</div>` : ""}
   `;
 
   if(q.qcm){
